@@ -1,19 +1,20 @@
 function testAlgo()
-
 clc;
 clear all;
 close all;
 
-P = [1 0 -10 -7 27 70 -20 -189 50 140 0 -350];
-roots(P);
-alpha = 0;
-beta = 1000;
+LASTN = maxNumCompThreads(1)
 
-[V, R] = AlgEuclideJulien(P,alpha,beta);
+P = [1 0 -10 -7 27 70 -20 -189 50 140 0 -350];
+r = roots(P)
+alpha = -100;
+beta = 100;
+
+[V, R] = AlgEuclide(P,alpha,beta);
 Multipli = ones(1,V); % vecteur contenant les multiplicités de chaque racine réelle
 [coeff, degre] = firstNonZeroCoefficient(R);
 while degre>0
-    [V, R] = AlgEuclideJulien(R,alpha,beta)
+    [V, R] = AlgEuclide(R,alpha,beta);
     Multipli(1:V) = Multipli(1:V)+1;
     [coeff, degre] = firstNonZeroCoefficient(R);
 end
@@ -27,11 +28,12 @@ function [coeff, degre] = firstNonZeroCoefficient(vec)
 coeff = NaN;
 degre = length(vec)-1;
 for i = 1:length(vec)
-    if vec(i) ~= 0
+    if abs(vec(i))>10^(-6)
         coeff = vec(i);
         break;
+    else
+        degre = degre -1;
     end
-    degre = degre -1;
 end
 end
 
