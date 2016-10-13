@@ -66,16 +66,17 @@
 }
 
 \title{LINMA1170 -- Numerical Analysis I -- Homework 1\\ \normalsize{Prof. : P. Van Dooren. Teaching assistant: P.-A. Beaufort.}\\ }
-\author{Julien Vaes -- 80291100 \\ Louis Regout -- mmmm1400}
+\author{ Robin Libois -- 37581200 \\ Louis Regout -- 86291400 \\ Julien Vaes -- 80291100 \\ Levi Tinel --}
 \date{\today}
 \begin{document}
 \maketitle
 
 
+
 \section*{Echauffement}
 Il nous est demandé de déterminer la suite de Sturm  $(f_0(x), \, f_1(x),\, \dots, \, f_m(x))$
 pour le polynôme $f_0(x) = x^4 + 3x^2 +2$.
-Pour déterminer ces derniers, il suffit d'appliquer la définition donnée à
+Pour déterminer cette dernière, il suffit d'appliquer la définition donnée à
 la page 2 du syllabus c-à-d:
 \begin{eqnarray}
   f_1(x) &=& f_0'(x)\\
@@ -91,7 +92,7 @@ se calculent de manière identique. D'après \ref{eqDef}, il est nécessaire que
    x^4 + 3x^2 +2 &=& (4x^3 + 6x)(a_0 + a_1x) - (r_0+r_1x+r_2x^2+r_3x^3) \label{initSyst}
 \end{eqnarray}
 Il est a noter que le reste de la division est d'au moins un degré inférieur à celui de $f_{0}(x)$. D'autre part, dans cette division ci, $q_1 (x)$
-est de degré maximum égal à 1. Le quotient et le reste s'obtiennent aisément en appliquant l'algorithme d'Euclide\footnote{la division eulidienne donne $f (x) = q (x) d (x) + r (x)$,
+est de degré maximum égal à 1. Le quotient et le reste s'obtiennent aisément en appliquant la devision euclidienne\footnote{la division eulidienne donne $f (x) = q (x) d (x) + r (x)$,
 or dans la récurrence nous désirons ${\color{red}-}r (x)$. Il faut donc inverser le signes du reste.} :
 
 $$
@@ -160,8 +161,9 @@ de racines complexes conjuguées.
   \end{center}
 \end{itemize}
 
+\clearpage
 \section*{Réflexion}
-Soit le polynôme $f_n(x) = a_n x^{n} + a_{n-1}^{n-1} + a_{n-2}^{n-2}+\dots + a_1x+a_0$ de degré $n$. Afin de démontrer que le tableau de Routh d'un polynôme
+Soit le polynôme $f_n(x) = a_n x^{n} + a_{n-1}x^{n-1} + a_{n-2}x^{n-2}+\dots + a_1x+a_0$ de degré $n$. Afin de démontrer que le tableau de Routh d'un polynôme
 peut être généré par l'algorithme d'Euclide : considérons pour cela les polynômes suivants :
 \begin{eqnarray}
   P_n(x)&=& a_nx^n-a_{n-2}x^{n-2}+a_{n-4}x^{n-4}-\dots\\
@@ -197,9 +199,87 @@ réels à l'aide de l'algorithme d'Euclide. En effet si nous définissions $P_n 
  de Routh est égal à $(-1)^{j+1} \mathbf{a_j}(P_{n-i+1})$ où $\mathbf{a_j}(P_{n-i+1})$ est le $j^{\text{ième}}$ coefficient non nul du polynôme $P_{n-i+1}(x)$ (en regardant les coefficients du degré le plus élévé au moins élevé).
  Par exemple, $\mathbf{a_2}(P_{n}) = -a_{n-2}$ ainsi $t_{1,2} = a_{n-2}$.
 
-
+\clearpage
 
 \section*{Performances}
 
+\textbf{Remarque :} pour l'étude des performances, nous avons forcé Matlab a n'utiliser qu'un seul \textit{thread}.
+
+\paragraph{Complexité théorique de notre fonction} Dans notre fonction \textit{AlgEuclide}, une boucle \textit{while} effectue la division euclidienne. Dans le pire des cas $n$ divisions euclidiennes
+    devront être calculées, et donc $n$ itérations seront nécesssaires. La division euclidienne de polynômes se fait en $\mathcal{O}(n)$.
+    De plus à l'intérieur de cette même boucle les fonctions \textit{makeTrueZero}\footnote{fonction qui transforme des petites valeurs ($<10^{-10}$) en 0.} et \textit{signeVec}\footnote{Fonction qui transforme un vecteur $v$ de la manière suivante : si $v(i)<0$ alors $v(i)=-1$, si $v(i)=0$ alors $v(i)=0$ et enfin si $v(i)>0$ alors $v(i)=1$.} ont toutes les deux une complexité en $\matcal{O}(n)$.
+     Ainsi nous pouvons déduire que la complexité temporelle théorique de AlgEuclide est de $\mathcal{O}(n^2)$. En effet
+
+    $$\Rightarrow Complexité = \mathcal{O}(n*(n+n+n)) = \mathcal{O}(3*n^2) = \mathcal{O}(n^2) $$
+
+\paragraph{Complexité pratique de notre fonction}
+    Pour vérifier la complexité théorique trouvée de \textit{AlgEuclide}, nous avons mesuré son temps d'exécution en fonction du degré $n$ de $f_0$.
+
+    \begin{center}
+      \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+  \hline
+      Degré de $f_0$ & 1000 & 1500 & 2000 & 2500 & 3000 & 3500 & 4000 & 4500 & 5000 \\
+      \hline
+     Temps d'éxécution (ms) & 14 & 24 & 34 & 50 & 65 & 173 & 101 & 132 & 146\\
+     \hline
+  \end{tabular}
+    \end{center}
+
+    Sur le graphe log-log suivant est représenté le temps necesssaire en fonction du degré du polynôme.
+    Nous savons que si $d$ est la pente de la regression linéaire, alors expérimentalement notre fonction aura
+    une complexité de $\mathcal{O}(n^d)$. En effet si nous supposons que la complexité est en $\mathcal{O}(n^k)$, $k$ est obtenu
+    par la pente de la regression :
+    $$ pente = \frac{log(Cn_1^k)-log(Cn_0^k)}{log(n_1)-log(n_0)} = k, $$
+    où $n_0$, $n_1$ sont des entiers représentant le dégré des polynômes et $C$ est la constante lié à la complexité.\\
+
+    Nous avons distingué deux cas : à gauche les coeffients sont entiers pris aléatoirement
+    entre 0 et 10, à droite les coefficients valent 1. Ce second cas est moins bien conditionné et devrait prendre plus de temps.
+
+        \begin{center}
+          \includegraphics[width=15cm]{image/perfEucl}
+        \end{center}
+
+        Après expérience nous observons une complexité de $\mathcal{O}(n^{1.55})$ pour le cas de gauche et de $\mathcal{O}(n^{1.86})$ pour le cas de droite.
+        Il faut noté que la complexité obtenue théoriquement est celle du pire cas ($n$ divisions euclidiennes nécessaires) et non celle du cas moyen, ceci peut donc
+        expliquer nos valeurs expérimentales plus faibles.
+
+\paragraph{Complexité de roots.m}
+    Pour étudier la complexité de roots, nous avons mesuré son temps d'exécution en fonction du degré n de $f_0$.
+
+    \begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+    \hline
+        Degré de $f_0$  & 500 & 1000 & 1500 & 2000 & 2500 & 3000 & 3500 & 4000 \\
+    \hline
+       Temps d'éxécution (s) & 0.31 & 1.4   & 3.69 &   6.71  & 11.2  & 20.06  & 30.23 &  47.17\\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    A nouveau, nous avons distingué deux cas : à gauche les coeffients sont entiers pris aléatoirement
+    entre 0 et 10, à droite les coefficients valent 1. Ce second cas est moins bien conditionné et devrait prendre plus de temps.
+
+    \begin{center}
+      \includegraphics[width=15cm]{image/perfRootm}
+    \end{center}
+
+    Après expérience nous observons une complexité de $\mathcal{O}(n^{2.48})$ pour le cas de gauche et de $\mathcal{O}(n^{2.57})$ pour le cas de droite.
+    Nous constatons également que la valeur théorique de 3 n'est pas atteinte. Nous imputons cette différence au fait que la complexité théorique est celle du pire des cas et que le notre, un polynome avec des coefficients unitaires\footnote{Un choix de coefficient aléatoire peut paraitre comme un choix plus pertinent, cependant il n'en est rien : comme le spectre des matrices de grandes tailles est en général assez homogène (valeurs propres suffisamment espacées), le problème est bien conditionné et le taux de convergence très rapide.}, n'est pas le pire.
+\paragraph{Stabilité des fonctions}
+
+\begin{itemize}
+\item [\textbullet] AlgEuclide.m:
+AlgEuclide renvoie pour n'importe quelle valeur de $\epsilon$ (même 0) le bon nombre de racines distinctes réelles (à savoir 2). Ceci est illustré sur la figure de gauche
+de l'image ci-dessous.
+    \item [\textbullet] root.m.:
+        Le comportement de root.m renvoie les bonnes racines tant que $\epsilon > 10^{-30}$. En deçà de cette valeur, et jusque $\epsilon = 10^{-160}$, les racines restent justes, sauf celle sensée valoir $\epsilon$. L'évolution de cette dernière
+        est représentée sur le graphe de droite de la figure ci-dessous. Idéalement nous aurions du avoir un évolution linéaire, hors nous voyons que lorsque epsilon tend vers 0, il y a un palier
+        ce qui peut être expliqué par la limitation des nombres représentables dans Matlab.
+
+        \begin{center}
+          \includegraphics[width=15cm]{image/stab}
+        \end{center}
+
+\end{itemize}
 
 \end{document}

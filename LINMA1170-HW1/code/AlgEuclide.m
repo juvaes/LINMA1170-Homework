@@ -20,7 +20,7 @@ M(:,2) = signeVec(polyval(F(2,:),[alpha beta]'));
 i = 2;
 while vectorNotNul(F(i,:))
     i = i+1;
-    R = makeTrueZero(divisionEuclidienePolynome(F(i-2,:),F(i-1,:)));
+    R = divisionEuclidienePolynome(F(i-2,:),F(i-1,:));
     F(i,end-length(R)+1:end) = R;
     M(:,i) = signeVec(polyval(F(i,:),[alpha beta]'));
 end
@@ -28,18 +28,12 @@ end
 R =  F(i-1,:);
 V = countVariations(M(1,1:i-1))-countVariations(M(2,1:i-1));
 
-
-% Va = countVariations(M(1,1:i-1));
-% Vb = countVariations(M(2,1:i-1));
-% Coefficients = F(1:i-1,:)
-% TableauSigne = M(:,1:i-1);
-
 end
 
-% Fonction qui effectue la division euclidienne entre deux polynômes
+%% Fonction qui effectue la division euclidienne entre deux polynômes
 function [R] = divisionEuclidienePolynome(N,D)
 
-%% Tests preliminaires
+% Tests preliminaires
 NwithOutZero=WithoutZero(N);
 DwithOutZero=WithoutZero(D);
 if DwithOutZero(1)==0 || NwithOutZero(1)==0 %Les vecteurs sont vides
@@ -63,23 +57,24 @@ else
     R=WithoutZero(newN);%Suppression des termes inutiles.
 end
 
-% Pour eviter de propager les erreurs numeriques
+%% Pour eviter de propager les erreurs numeriques
 if length(R)>length(DwithOutZero)
     R = R(end-length(DwithOutZero)+1:end);
 end
 R = (-1)*makeTrueZero(R);
 end
 
+%% Fonction qui remplace des toutes petites valeurs par des 0
 function newVec = makeTrueZero(vec)
 newVec = vec;
 for j = 1:length(vec)
-    if abs(vec(j))<10^(-8)
+    if abs(vec(j))<10^(-10)
         newVec(j)=0;
     end
 end
 end
 
-%Fonction servant à éliminer les termes nuls qui doivent être
+%% Fonction servant à éliminer les termes nuls qui doivent être
 %supprimés dans un vecteur vec, c'est-à-dire tous les coefficients nuls devant le premier
 %coefficient (non-nul) de l'indice le plus petit du vecteur. Si le vecteur vec est
 %vide ou n'est composé que de 0, le vecteur retourné sera [0].
@@ -97,7 +92,7 @@ else
 end
 end
 
-% Fonction renvoyant un vecteur contenant le nombre de variations de signe
+%% Fonction renvoyant un vecteur contenant le nombre de variations de signe
 function [var] = countVariations(vec)
 var = 0;
 indexLastNotNul = 0;
@@ -119,7 +114,7 @@ for i = indexLastNotNul:length(vec)-1
 end
 end
 
-% Fonction qui renvoie true si le vecteur est non nul
+%% Fonction qui renvoie true si le vecteur est non nul
 function [var] = vectorNotNul(vec)
 var = 0;
 for i = 1:length(vec)
@@ -131,7 +126,7 @@ end
 end
 
 
-% Renvoie un vecteur contenant les signes d'un vecteur [-5 0 1 2] --> [-1 0 1 1]
+%% Renvoie un vecteur contenant les signes d'un vecteur [-5 0 1 2] --> [-1 0 1 1]
 function [v] = signeVec(vec)
 v = 0*vec;
 for i = 1:length(vec)

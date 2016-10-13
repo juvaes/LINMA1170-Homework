@@ -1,4 +1,4 @@
-close all; clc;
+close all; clc; clear all;
 
 LASTN = maxNumCompThreads(1);
 
@@ -12,20 +12,20 @@ numberRoots = 500:500:4000;
 timeExecutionCas1 = 0*numberRoots;
 timeExecutionCas2 = 0*numberRoots;
 
-%% Expérience : 2 cas diférents
+%% Expérience : 2 cas différents
 
 for i = 1:length(numberRoots)
-    
+    n = numberRoots(i)
     % Cas 1 : on prend un des coefficients entiers au hasar entre 0 et 10
     coefficients = randi(10,1,numberRoots(i)); 
     tic;
-    [V,R] = AlgEuclide(coefficient,alpha,beta);
+    [V,R] = AlgEuclide(coefficients,alpha,beta);
     timeExecutionCas1(i) = toc;
     
     % Cas 2 : on prend des coefficients égaux à 1 (cas méchant)
     coefficients = ones(1,numberRoots(i)); 
     tic;
-    [V,R] = AlgEuclide(coefficient,alpha,beta);
+    [V,R] = AlgEuclide(coefficients,alpha,beta);
     timeExecutionCas2(i) = toc;
     
 end

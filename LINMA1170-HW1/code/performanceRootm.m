@@ -1,4 +1,4 @@
-close all; clc;
+close all; clc; clear all;
 
 % On impose à Matlab d'utiliser un seul thread
 LASTN = maxNumCompThreads(1);

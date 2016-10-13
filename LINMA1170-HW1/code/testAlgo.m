@@ -3,10 +3,10 @@ clc;
 clear all;
 close all;
 
-LASTN = maxNumCompThreads(1)
+LASTN = maxNumCompThreads(1);
 
 P = [1 0 -10 -7 27 70 -20 -189 50 140 0 -350];
-r = roots(P)
+%P = rand(1,50);
 alpha = -100;
 beta = 100;
 
@@ -19,6 +19,17 @@ while degre>0
     [coeff, degre] = firstNonZeroCoefficient(R);
 end
 
+
+r = roots(P)
+r = imag(roots(P));
+count = 0;
+for i = 1:length(r)
+    if r(i)==0
+        count=count+1;
+    end
+end
+
+nRac = count
 Result = Multipli
 
 end

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.26)  10 OCT 2016 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.26)  13 OCT 2016 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Homework1_C.tex
-(./Homework1_C.tex
+**Homework1_GoupC.tex
+(./Homework1_GoupC.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -363,8 +363,8 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(./Homework1_C.aux)
-\openout1 = `Homework1_C.aux'.
+(./Homework1_GoupC.aux)
+\openout1 = `Homework1_GoupC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
@@ -462,60 +462,128 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 95.
+(Font)              <9> on input line 96.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 95.
+(Font)              <5> on input line 96.
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 133.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 134.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 133.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 134.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+Underfull \hbox (badness 10000) in paragraph at lines 141--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
 
-Overfull \hbox (7.51268pt too wide) in paragraph at lines 194--199
+Overfull \hbox (7.51268pt too wide) in paragraph at lines 196--201
 \OT1/lmr/m/n/10.95 0\OML/lmm/m/it/10.95 ; [] ; m \OMS/lmsy/m/n/10.95 ^^@ \OT1/lmr/m/n/10.95 2$\T1/lmr/m/n/10.95 , nous pou-vons af-fir-mer que l'élé-ment $\OML/lmm/m/it/10.95 t[]$ \T1/lmr/m/n/10.95 du ta-bleau de Routh est égal à $\OT1/lmr/m/n/10.95 (\OMS/lmsy/m/n/10.95 ^^@\OT1/lmr/m/n/10.95 1)[][](\OML/lmm/m/it/10.95 P[]\OT1/lmr/m/n/10.95 )$
  []
 
-[3] (./Homework1_C.aux) ) 
+[3
+
+]
+./Homework1_GoupC.tex:210: Undefined control sequence.
+<recently read> \matcal 
+                        
+l.210 ...utes les deux une complexitÃ© en $\matcal
+                                                  {O}(n)$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 213.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
+
+ []
+
+Package epstopdf Info: Source file: <image/perfEucl.eps>
+(epstopdf)                    date: 2016-10-13 22:01:42
+(epstopdf)                    size: 22367 bytes
+(epstopdf)             Output file: <image/perfEucl-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-10-13 22:24:46
+(epstopdf)                    size: 10560 bytes
+(epstopdf)             Command: <repstopdf --outfile=image/perfEucl-eps-converted-to.pdf image/perfEucl.eps>
+(epstopdf)             \includegraphics on input line 239.
+Package epstopdf Info: Output file is already uptodate.
+<image/perfEucl-eps-converted-to.pdf, id=34, 1280.785pt x 470.75874pt>
+File: image/perfEucl-eps-converted-to.pdf Graphic file (type pdf)
+ <use image/perfEucl-eps-converted-to.pdf>
+Package pdftex.def Info: image/perfEucl-eps-converted-to.pdf used on input line 239.
+(pdftex.def)             Requested size: 426.79134pt x 156.86652pt.
+ [4
+
+]
+Package epstopdf Info: Source file: <image/perfRootm.eps>
+(epstopdf)                    date: 2016-10-13 21:56:25
+(epstopdf)                    size: 21765 bytes
+(epstopdf)             Output file: <image/perfRootm-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-10-13 22:22:06
+(epstopdf)                    size: 10498 bytes
+(epstopdf)             Command: <repstopdf --outfile=image/perfRootm-eps-converted-to.pdf image/perfRootm.eps>
+(epstopdf)             \includegraphics on input line 263.
+Package epstopdf Info: Output file is already uptodate.
+ <image/perfRootm-eps-converted-to.pdf, id=38, 1280.785pt x 454.69875pt>
+File: image/perfRootm-eps-converted-to.pdf Graphic file (type pdf)
+ <use image/perfRootm-eps-converted-to.pdf>
+Package pdftex.def Info: image/perfRootm-eps-converted-to.pdf used on input line 263.
+(pdftex.def)             Requested size: 426.79134pt x 151.51498pt.
+ [5 <./image/perfEucl-eps-converted-to.pdf> <./image/perfRootm-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <image/stab.eps>
+(epstopdf)                    date: 2016-10-13 23:49:14
+(epstopdf)                    size: 36728 bytes
+(epstopdf)             Output file: <image/stab-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-10-13 23:54:37
+(epstopdf)                    size: 13236 bytes
+(epstopdf)             Command: <repstopdf --outfile=image/stab-eps-converted-to.pdf image/stab.eps>
+(epstopdf)             \includegraphics on input line 280.
+Package epstopdf Info: Output file is already uptodate.
+ <image/stab-eps-converted-to.pdf, id=58, 1280.785pt x 459.7175pt>
+File: image/stab-eps-converted-to.pdf Graphic file (type pdf)
+ <use image/stab-eps-converted-to.pdf>
+Package pdftex.def Info: image/stab-eps-converted-to.pdf used on input line 280.
+(pdftex.def)             Requested size: 426.79134pt x 153.18735pt.
+ [6 <./image/stab-eps-converted-to.pdf>] (./Homework1_GoupC.aux) ) 
 Here is how much of TeX's memory you used:
- 9485 strings out of 493014
- 134174 string characters out of 6133351
+ 9519 strings out of 493014
+ 134822 string characters out of 6133351
  256582 words of memory out of 5000000
- 12821 multiletter control sequences out of 15000+600000
- 88967 words of font info for 78 fonts, out of 8000000 for 9000
+ 12836 multiletter control sequences out of 15000+600000
+ 94844 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,40p,338b,570s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy9.pfb>
-Output written on Homework1_C.pdf (3 pages, 272882 bytes).
+ 42i,9n,40p,620b,570s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy9.pfb>
+Output written on Homework1_GoupC.pdf (6 pages, 317297 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
